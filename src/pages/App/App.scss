@@ -1,0 +1,121 @@
+:root {
+  --first: #240046;
+  --second: #3c096c;
+  --third: #3c096c;
+  --fourth: #5a189a;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 650px;
+    min-width: 385px;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: fit-content;
+      width: 95%;
+      background-color: #240046;
+      margin: 5px;
+      padding: 2px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 5px;
+
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 17px;
+        color: white;
+        text-align: center;
+      }
+    }
+
+    .main {
+      width: 95%;
+      border-radius: 5px;
+      height: 70%;
+      margin-top: 40px;
+      padding: 2px;
+      background-color: #240046;
+
+      .tabs {
+        position: relative;
+        display: flex;
+        height: 60px;
+        width: 95%;
+        padding: 2px;
+        bottom: 40px;
+        z-index: -1;
+
+        .tab {
+          width: fit-content;
+          height: 100%;
+          padding-top: 10px;
+          padding-left: 10px;
+          padding-right: 10px;
+          margin-left: 4px;
+          border-radius: 5px;
+          color: white;
+          background-color: #3c096c;
+          opacity: 0.9;
+
+          &:first-child {
+            margin-left: 2px;
+          }
+
+          &.active {
+            background-color: #240046;
+            opacity: 1;
+          }
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-corners {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50px;
+    height: 200px;
+    rotate: 40deg;
+    bottom: -120px;
+    left: -40px;
+    opacity: 0.8;
+
+    &__left {
+      height: 80%;
+      width: 10px;
+      border-radius: 15px;
+      background-color: var(--first);
+    }
+
+    &__center {
+      height: 100%;
+      width: 10px;
+      border-radius: 15px;
+      background-color: var(--second);
+    }
+
+    &__right {
+      height: 80%;
+      width: 10px;
+      border-radius: 15px;
+      background-color: var(--third);
+    }
+  }
+}
+
