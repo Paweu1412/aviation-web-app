@@ -58,7 +58,8 @@
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
         background-color: var(--second);
-        opacity: 0.9;
+        transition: background-color 0.3s ease;
+        opacity: 0.8;
 
         &:first-child {
           margin-left: -2px;
