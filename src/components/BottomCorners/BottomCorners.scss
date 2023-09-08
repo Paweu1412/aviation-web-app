@@ -1,0 +1,40 @@
+:root {
+  --first-corners: #023E8A;
+  --second-corners: #0077B6;
+  --third-corners: #0096C7;
+  --fourth-corners: #00B4D8;
+}
+
+.bottom-corners {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40px;
+  height: 100px;
+  rotate: 40deg;
+  left: -3%;
+  top: 87%;
+  opacity: 0.6;
+
+  &__left {
+    height: 80%;
+    width: 10px;
+    border-radius: 15px;
+    background-color: var(--fourth-corners);
+  }
+
+  &__center {
+    height: 100%;
+    width: 10px;
+    border-radius: 15px;
+    background-color: var(--third-corners);
+  }
+
+  &__right {
+    height: 80%;
+    width: 10px;
+    border-radius: 15px;
+    background-color: var(--second-corners);
+  }
+}
