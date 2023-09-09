@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-import Settings from '../tabs/Settings/Settings';
-import Transition from '../tabs/Transition/Transition';
-import Weather from '../tabs/Weather/Weather';
-import Main from '../tabs/Main/Main';
+import Settings from './tabs/Settings/Settings';
+import Transition from './tabs/Transition/Transition';
+import Weather from './tabs/Weather/Weather';
+import Main from './tabs/Main/Main';
 
 import './App.scss';
 
