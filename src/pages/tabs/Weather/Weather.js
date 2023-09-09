@@ -3,6 +3,7 @@ import { Warning, Close } from '@mui/icons-material';
 import { useState, useEffect } from 'react';
 
 import { checkIcaoCodeSyntaxValidity } from '../../../utils/Utils';
+import AirportInformation from '../../../components/AirportInformation/AirportInformation';
 
 import './Weather.scss';
 
@@ -15,27 +16,28 @@ const Weather = () => {
   const [cooldown, setCooldown] = useState(false);
   const [alert, setAlert] = useState('');
 
-  const [airportInfo, setAirportInfo] = useState([]);
-  const [weatherInfo, setWeatherInfo] = useState([]);
+  const [airportData, setAirportData] = useState([]);
+  const [weatherData, setWeatherData] = useState([]);
   const [dataCollected, setDataCollected] = useState(0);
 
   useEffect(() => {
     if (dataCollected === 2) {
       console.log('Got it!');
+      setLoading(false);
     }
   }, [dataCollected])
 
   useEffect(() => {
-    if (airportInfo.length !== 0) {
-      console.log(airportInfo);
+    if (airportData.length !== 0) {
+      // console.log(airportData);
     }
-  }, [airportInfo]);
+  }, [airportData]);
 
   useEffect(() => {
-    if (weatherInfo.length !== 0) {
-      console.log(weatherInfo);
+    if (weatherData.length !== 0) {
+      // console.log(weatherData);
     }
-  }, [weatherInfo]);
+  }, [weatherData]);
   
   useEffect(() => {
     if (alert !== '') {
@@ -70,13 +72,17 @@ const Weather = () => {
   }
 
   const fetchWeatherData = async () => {
+    if (cooldown) {
+      return sendAlert('Please wait for cooldown (5 seconds)');
+    }
+
     if (!checkIcaoCodeSyntaxValidity(icaoCode)) {
       return sendAlert('The entered ICAO code is incorrect');
     }
 
-    if (cooldown) {
-      return sendAlert('Please wait for cooldown (5 seconds)');
-    }
+    setAirportData([]);
+    setWeatherData([]);
+    setDataCollected(0);
 
     setLoading(true);
     setCooldown(true);
@@ -93,7 +99,7 @@ const Weather = () => {
           return sendAlert('No airport in our database');
         }
 
-        setAirportInfo(res);
+        setAirportData(res);
         setDataCollected(prevDataCollected => prevDataCollected + 1);
       })
     
@@ -106,7 +112,7 @@ const Weather = () => {
           return sendAlert('No airport in our database')
         }
 
-        setWeatherInfo(res.data[0]);
+        setWeatherData(res.data[0]);
         setDataCollected(prevDataCollected => prevDataCollected + 1);
       })
       .catch(err => {
@@ -149,7 +155,7 @@ const Weather = () => {
       </div>
 
       <div className="lower">
-        
+        {dataCollected === 2 && <AirportInformation airportData={airportData} weatherData={weatherData} />}
       </div>
 
       <div className="footer">
