@@ -23,4 +23,46 @@
       font-size: 15px;
     }
   }
+
+  .lower {
+    background-color: rgba(134, 134, 134, 0.3);
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    
+    span {
+      margin-bottom: 5px;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    a {
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #ffdd00;
+      text-decoration: none;
+    }
+  }
+
+  .version {
+    background-color: rgba(134, 134, 134, 0.3);
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    
+    span {
+      font-size: 15px;
+    }
+  }
 }

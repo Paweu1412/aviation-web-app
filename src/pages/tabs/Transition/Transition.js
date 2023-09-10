@@ -117,7 +117,7 @@ const Transition = () => {
 
       {transitionLevel === '' &&
         <div className="footer">
-          <p>The Transition Level is the lower limit to use the standard 1013hPa altimeter setting, applicable to all aircraft defined inside the associated TMA (terminal area) where transition altitude is published.</p>
+          <p>💡 The Transition Level is the lower limit to use the standard 1013hPa altimeter setting, applicable to all aircraft defined inside the associated TMA (terminal area) where transition altitude is published.</p>
         </div>
       }
 
