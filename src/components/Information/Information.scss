@@ -29,7 +29,7 @@
   .weather {
     margin: 5px;
     padding: 5px;
-    background-image: url('https://media.discordapp.net/attachments/1045000837241524264/1150260939069853806/1.png');
+    background-image: url('https://media.discordapp.net/attachments/1045000837241524264/1150260938839171173/2.png');
     background-position-y: 0;
     background-position-x: 95%;
     background-size: 150px;
@@ -55,10 +55,10 @@
       }
     }
   }
-
+  
   .runways {
-    background-image: url('https://media.discordapp.net/attachments/1045000837241524264/1150260938839171173/2.png');
-    background-position-y: 6%;
+    background-image: url('https://media.discordapp.net/attachments/1045000837241524264/1150260939069853806/1.png');
+    background-position-y: 0;
     background-position-x: 95%;
     background-size: 150px;
     background-repeat: no-repeat;
@@ -75,6 +75,18 @@
       
       p {
         margin: 0;
+      }
+
+      span {
+        display: flex;
+      }
+
+      &__status {
+        margin-left: 10px;
+
+        img {
+          width: 90px;
+        }
       }
     }
   }

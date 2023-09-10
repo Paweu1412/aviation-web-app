@@ -153,7 +153,7 @@ const Weather = () => {
         {dataCollected === 2 && <Information airportData={airportData} weatherData={weatherData} />}
       </div>
 
-      <div className="footer">
+      <div className="alert">
         {alert !== '' && alert}
       </div>
     </div> 

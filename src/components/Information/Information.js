@@ -1,4 +1,7 @@
 import getRunwaysWeather from '../../utils/Utils';
+import needBeSureLandIcon from '../../assets/needbesureLandIcon.png';
+import canLandIcon from '../../assets/canLandIcon.png';
+import cannotLandIcon from '../../assets/cannotLandIcon.png';
 
 import './Information.scss';
 
@@ -104,23 +107,43 @@ const Information = (query) => {
           {airportData.runways.map((runway, index) => {
             const getRunwayAvailabilityStatus = (runway) => {
               if (runwaysInfo[runway].status.mainWind === 'headwind') {
-                return '🟩';
+                return (
+                  <div className="runway__status">
+                    <img src={canLandIcon} alt="can land" />
+                  </div>
+                );
               }
 
               if (runwaysInfo[runway].status.mainWind === 'crosswind') {
                 if (runwaysInfo[runway].crosswind <= 10) {
-                  return '🟩';
+                  return (
+                    <div className="runway__status">
+                      <img src={canLandIcon} alt="can land" />
+                    </div>
+                  );
                 }
 
-                return '🟩 ⚠️';
+                return (
+                  <div className="runway__status">
+                    <img src={needBeSureLandIcon} alt="can land" />
+                  </div>
+                );
               }
 
               if (runwaysInfo[runway].status.mainWind === 'tailwind') {
                 if (runwaysInfo[runway].headtailwind <= 5) {
-                  return '🟩 ⚠️';
+                  return (
+                    <div className="runway__status">
+                      <img src={needBeSureLandIcon} alt="need be sure to land" />
+                    </div>
+                  );
                 }
 
-                return '🟥';
+                return (
+                    <div className="runway__status">
+                      <img src={cannotLandIcon} alt="cannot land" />
+                    </div>
+                  );
               }
 
               return null;
@@ -138,15 +161,15 @@ const Information = (query) => {
               let callback = '';
 
               if (results.headwind) {
-                callback += `\nHeadwind ${results.headwind}`
+                callback += `\n• Headwind ${results.headwind}`
               }
 
               if (results.tailwind) {
-                callback += `\nTailwind ${results.tailwind}`
+                callback += `\n• Tailwind ${results.tailwind}`
               }
 
               if (results.crosswind) {
-                callback += `\nCrosswind ${results.crosswind}`
+                callback += `\n• Crosswind ${results.crosswind}`
               }
 
               return callback;
