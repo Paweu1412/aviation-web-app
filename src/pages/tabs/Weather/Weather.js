@@ -74,14 +74,14 @@ const Weather = () => {
 
     setTimeout(() => {
       setCooldown(false);
-    }, 5000);
+    }, 3000);
 
     await fetch(`https://airportdb.io/api/v1/airport/${icaoCode}?apiToken=${AIRPORTDB_API_TOKEN}`)
       .then(res => res.json())
       .then(res => {
         if (res.statusCode === 404) {
           setLoading(false);
-          return sendAlert('No airport in our database');
+          return sendAlert('No airport in database');
         }
 
         setAirportData(res);
