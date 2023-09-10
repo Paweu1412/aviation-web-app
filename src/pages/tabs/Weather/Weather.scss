@@ -51,6 +51,44 @@
     }
   }
 
+  .instruction {
+    background-color: rgba(134, 134, 134, 0.3);
+    margin: 5px;
+    padding: 5px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+
+    .explanations {
+      .explanation {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      img {
+        width: 100px;
+      }
+    }
+
+    span {
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0;
+      font-size: 16px;
+      width: 250px;
+
+      &.warning {
+        width: 270px;
+        font-size: 11px;
+      }
+    }
+  }
+
   .alert {
     position: absolute;
     width: calc(100% - 14px);

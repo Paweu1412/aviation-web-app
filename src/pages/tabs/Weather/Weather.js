@@ -3,6 +3,11 @@ import { Input, Button, Alert, IconButton } from '@mui/joy';
 import { Warning, Close } from '@mui/icons-material';
 import { checkIcaoCodeSyntaxValidity } from '../../../utils/Utils';
 import Information from '../../../components/Information/Information';
+
+import canLandIcon from '../../../assets/canLandIcon.png';
+import cannotLandIcon from '../../../assets/cannotLandIcon.png';
+import needBeSureLandIcon from '../../../assets/needbesureLandIcon.png';
+
 import './Weather.scss';
 
 var AIRPORTDB_API_TOKEN = '184cc8be655c6fa1977310ede1c55100174968096e013fe33eca7ee09582dc81dc31e9e95ea8c748bccf54041210a0b3';
@@ -148,6 +153,34 @@ const Weather = () => {
           </Button>
         }
       </div>
+
+      {dataCollected !== 2 && 
+        <div className="instruction">
+          <span>Before you choose an airport 👇</span>
+
+          <div className="explanations">
+            <div className="explanation">
+              <img src={canLandIcon} alt="can land" />
+              <p>• Runway is available for use</p>
+            </div>
+
+            <div className="explanation">
+              <img src={needBeSureLandIcon} alt="need be sure land" />
+              <p>• Runway may be available for use, but you need to make sure</p>
+            </div>
+
+            <div className="explanation">
+              <img src={cannotLandIcon} alt="cannot land" />
+              <p>• Runway is not available for use</p>
+            </div>
+
+            <div className="explanation">
+              <p className="warning"><b>This tool has been created for virtual aviation only. It should not be used in real flying.</b></p>
+            </div>
+          </div>
+        </div>
+      }
+      
 
       <div className="lower">
         {dataCollected === 2 && <Information airportData={airportData} weatherData={weatherData} />}

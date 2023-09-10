@@ -16,6 +16,14 @@ const Main = () => {
           <b>• Transition Level Tool</b> - is a calculator that allows you to calculate the Transition Level based on the airport's given QNH and Transition Altitude.
         </p>
       </div>
+
+      <div className="lower">
+        <span>Did you find my tool helpful?</span>
+
+        <a href="https://www.buymeacoffee.com/essentialflighttools"><img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" alt="Buy me a coffee" />buymeacoffee.com/essentialflighttools</a>
+
+        <p>I would be hugely grateful if you could support me with a modest coffee. It will help me develop the tool. Thank you very much! ❤️</p>
+      </div>
     </div>
   )
 }
