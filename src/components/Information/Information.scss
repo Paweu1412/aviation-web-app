@@ -23,11 +23,17 @@
     justify-content: space-around;
     font-size: 15px;
     gap: 10px;
+    
   }
 
   .weather {
     margin: 5px;
     padding: 5px;
+    background-image: url('https://media.discordapp.net/attachments/1045000837241524264/1150260939069853806/1.png');
+    background-position-y: 0;
+    background-position-x: 95%;
+    background-size: 150px;
+    background-repeat: no-repeat;
     background-color: rgba(134, 134, 134, 0.3);
     border-radius: 5px;
     font-size: 15px;
@@ -51,6 +57,11 @@
   }
 
   .runways {
+    background-image: url('https://media.discordapp.net/attachments/1045000837241524264/1150260938839171173/2.png');
+    background-position-y: 2%;
+    background-position-x: 95%;
+    background-size: 150px;
+    background-repeat: no-repeat;
     margin: 5px;
     padding: 5px;
     margin-bottom: 0;
