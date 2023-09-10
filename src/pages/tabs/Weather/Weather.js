@@ -99,14 +99,14 @@ const Weather = () => {
       .then(res => {
         if (res.results === 0 || res.statusCode === 404) {
           setLoading(false);
-          return sendAlert('No airport in our database')
+          return sendAlert('No airport in database')
         }
 
         setWeatherData(res.data[0]);
         setDataCollected(prevDataCollected => prevDataCollected + 1);
       })
       .catch(err => {
-        return sendAlert('No airport in our database')
+        return sendAlert('No airport in database')
       })
   }
 

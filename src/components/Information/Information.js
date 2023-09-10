@@ -1,3 +1,5 @@
+import React from 'react';
+
 import getRunwaysWeather from '../../utils/Utils';
 import needBeSureLandIcon from '../../assets/needbesureLandIcon.png';
 import canLandIcon from '../../assets/canLandIcon.png';
@@ -105,6 +107,9 @@ const Information = (query) => {
 
       <div className="runways">
           {airportData.runways.map((runway, index) => {
+            const leKey = `runway-${runway.le_ident}`;
+            const heKey = `runway-${runway.he_ident}`;
+
             const getRunwayAvailabilityStatus = (runway) => {
               if (runwaysInfo[runway].status.mainWind === 'headwind') {
                 return (
@@ -176,21 +181,21 @@ const Information = (query) => {
             }
 
             return (
-              <>
-                <div className="runway" key={`runway-${runway.le_ident}`}>
+              <React.Fragment key={leKey + heKey}>
+                <div className="runway" key={leKey}>
                   <span><b>RWY {runway.le_ident}</b> {getRunwayAvailabilityStatus(runway.le_ident)}</span>
                   <p>Winds:{getRunwayWinds(runway.le_ident)}<br></br><br></br></p>
                   <p>Elevation: {runway.le_elevation_ft ? `${runway.le_elevation_ft}ft` : 'n/a'}</p>
                   <p>ILS: {runway.le_ils !== undefined ? `${runway.le_ils.freq}ft / ${runway.le_ils.course}°` : 'n/a'}</p>
                 </div>
 
-                <div className="runway" key={`runway-${runway.he_ident}`}>
+                <div className="runway" key={heKey}>
                   <span><b>RWY {runway.he_ident}</b> {getRunwayAvailabilityStatus(runway.he_ident)}</span>
                   <p>Winds:{getRunwayWinds(runway.he_ident)}<br></br><br></br></p>
                   <p>Elevation: {runway.he_elevation_ft ? `${runway.he_elevation_ft}ft` : 'n/a'}</p>
                   <p>ILS: {runway.he_ils !== undefined ? `${runway.he_ils.freq}ft / ${runway.he_ils.course}°` : 'n/a'}</p>
                 </div>
-              </>
+              </React.Fragment>
             )
         })}
       </div>
