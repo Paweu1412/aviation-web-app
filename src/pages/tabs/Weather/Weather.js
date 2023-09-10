@@ -1,10 +1,8 @@
+import { useState, useEffect } from 'react';
 import { Input, Button, Alert, IconButton } from '@mui/joy';
 import { Warning, Close } from '@mui/icons-material';
-import { useState, useEffect } from 'react';
-
 import { checkIcaoCodeSyntaxValidity } from '../../../utils/Utils';
-import AirportInformation from '../../../components/AirportInformation/AirportInformation';
-
+import Information from '../../../components/Information/Information';
 import './Weather.scss';
 
 var AIRPORTDB_API_TOKEN = '184cc8be655c6fa1977310ede1c55100174968096e013fe33eca7ee09582dc81dc31e9e95ea8c748bccf54041210a0b3';
@@ -22,28 +20,15 @@ const Weather = () => {
 
   useEffect(() => {
     if (dataCollected === 2) {
-      console.log('Got it!');
       setLoading(false);
     }
   }, [dataCollected])
-
-  useEffect(() => {
-    if (airportData.length !== 0) {
-      // console.log(airportData);
-    }
-  }, [airportData]);
-
-  useEffect(() => {
-    if (weatherData.length !== 0) {
-      // console.log(weatherData);
-    }
-  }, [weatherData]);
   
   useEffect(() => {
     if (alert !== '') {
       const timer = setTimeout(() => {
         setAlert('');
-      }, 4000);
+      }, 3000);
 
       return () => clearTimeout(timer);
     }
@@ -73,7 +58,7 @@ const Weather = () => {
 
   const fetchWeatherData = async () => {
     if (cooldown) {
-      return sendAlert('Please wait for cooldown (5 seconds)');
+      return sendAlert('Please wait for cooldown (3 seconds)');
     }
 
     if (!checkIcaoCodeSyntaxValidity(icaoCode)) {
@@ -132,8 +117,18 @@ const Weather = () => {
           variant="outlined"
           color="neutral"
           className="input"
-          onChange={(e) => setIcaoCode(e.target.value)}
-          onPaste={(e) => setIcaoCode(e.target.value)}
+          onInput={(e) => e.target.value = ("" + e.target.value).toUpperCase()}
+          onChange={(e) => {
+            if (e.target.value.length > 4) {
+              e.target.value = e.target.value.slice(0, 4);
+            }
+
+            setIcaoCode(e.target.value);
+          }}
+          onPaste={(e) => {
+            const pastedValue = e.clipboardData.getData('text/plain').slice(0, 4);
+            setIcaoCode(pastedValue.toUpperCase());
+          }}
         />
 
         {loading ? 
@@ -155,7 +150,7 @@ const Weather = () => {
       </div>
 
       <div className="lower">
-        {dataCollected === 2 && <AirportInformation airportData={airportData} weatherData={weatherData} />}
+        {dataCollected === 2 && <Information airportData={airportData} weatherData={weatherData} />}
       </div>
 
       <div className="footer">

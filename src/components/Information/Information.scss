@@ -1,0 +1,70 @@
+.information {
+  max-height: 340px; /* Ustaw maksymalną wysokość */
+  overflow-y: auto;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    
+    span {
+      font-weight: bold;
+      font-size: 17px;
+      text-align: center;
+    }
+  }
+
+  .airport {
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(134, 134, 134, 0.3);
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+    gap: 10px;
+  }
+
+  .weather {
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(134, 134, 134, 0.3);
+    border-radius: 5px;
+    font-size: 15px;
+    text-align: center;
+
+    .weather__upper {
+      margin-bottom: 10px;
+    }
+
+    .weather__lower {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+
+      .element {
+        flex-basis: calc(33.33% - 10px);
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  .runways {
+    margin: 5px;
+    padding: 5px;
+    margin-bottom: 0;
+    background-color: rgba(134, 134, 134, 0.3);
+    border-radius: 5px;
+    font-size: 15px;
+    white-space: pre-wrap;
+
+    .runway {
+      padding: 5px;
+      
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
