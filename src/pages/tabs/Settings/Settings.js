@@ -16,7 +16,7 @@ const Settings = () => {
       </div>
 
       <div className="version">
-        <span>10.09.2023 20:27 v1.0</span>
+        <span>11.09.2023 13:27 v1.01</span>
       </div>
     </div>
   )
