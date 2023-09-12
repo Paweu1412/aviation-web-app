@@ -157,7 +157,16 @@ const Information = (query) => {
           </div>
 
           <div className="element">
-            <b>Wind..</b><br></br> {weatherData.wind ? `${weatherData.wind.degrees}° / ${weatherData.wind.speed_kts}kts` : 'n/a'}
+            <b>Wind..</b><br/>
+            {weatherData.wind ? (
+              weatherData.wind.degrees === 0 ? (
+                'VRB'
+              ) : (
+                `${weatherData.wind.degrees}° / ${weatherData.wind.speed_kts}kts`
+              )
+            ) : (
+              'n/a'
+            )}
           </div>
 
           <div className="element">
