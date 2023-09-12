@@ -20,7 +20,7 @@ const App = () => {
         <div className="tabs">
           <div className={`tab${tab === 1 ? ' active' : ''}`} onClick={() => setTab(1)}>Weather</div>
           <div className={`tab${tab === 2 ? ' active' : ''}`} onClick={() => setTab(2)}>Transition Level</div>
-          <div className={`tab${tab === 3 ? ' active' : ''}`} onClick={() => setTab(3)}>Settings</div>
+          <div className={`tab${tab === 3 ? ' active' : ''}`} onClick={() => setTab(3)}>About me</div>
         </div>
 
         {tab === 0 && <Main />}
