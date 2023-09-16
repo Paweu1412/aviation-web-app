@@ -145,11 +145,11 @@ const Information = (query) => {
           </div>
 
           <div className="element">
-            <b>Temperature..</b><br></br> {weatherData.temperature ? `${weatherData.temperature.celsius}°C` : 'n/a'}
+            <b>Temperature..</b><br></br> {weatherData.temperature ? `${weatherData.temperature.celsius}*C` : 'n/a'}
           </div>
 
           <div className="element">
-            <b>Dew point..</b><br></br> {weatherData.dewpoint ? `${weatherData.dewpoint.celsius}°C` : 'n/a'}
+            <b>Dew point..</b><br></br> {weatherData.dewpoint ? `${weatherData.dewpoint.celsius}*C` : 'n/a'}
           </div> 
 
           <div className="element">
@@ -162,7 +162,7 @@ const Information = (query) => {
               weatherData.wind.degrees === 0 ? (
                 `VRB / ${weatherData.wind.speed_kts}kts`
               ) : (
-                `${weatherData.wind.degrees}° / ${weatherData.wind.speed_kts}kts`
+                `${weatherData.wind.degrees}* / ${weatherData.wind.speed_kts}kts`
               )
             ) : (
               'n/a'
@@ -264,14 +264,14 @@ const Information = (query) => {
                   <span><b>RWY {runway.le_ident}</b> {getRunwayAvailabilityStatus(runway.le_ident)}</span>
                   <p>Winds:{getRunwayWinds(runway.le_ident)}<br></br><br></br></p>
                   <p>Elevation: {runway.le_elevation_ft ? `${runway.le_elevation_ft}ft` : 'n/a'}</p>
-                  <p>ILS/LOC: {runway.le_ils !== undefined ? `${runway.le_ils.freq}ft / ${runway.le_ils.course}°` : 'n/a'}</p>
+                  <p>ILS/LOC: {runway.le_ils !== undefined ? `${runway.le_ils.freq}ft / ${runway.le_ils.course}*` : 'n/a'}</p>
                 </div>
 
                 <div className="runway" key={heKey}>
                   <span><b>RWY {runway.he_ident}</b> {getRunwayAvailabilityStatus(runway.he_ident)}</span>
                   <p>Winds:{getRunwayWinds(runway.he_ident)}<br></br><br></br></p>
                   <p>Elevation: {runway.he_elevation_ft ? `${runway.he_elevation_ft}ft` : 'n/a'}</p>
-                  <p>ILS/LOC: {runway.he_ils !== undefined ? `${runway.he_ils.freq}ft / ${runway.he_ils.course}°` : 'n/a'}</p>
+                  <p>ILS/LOC: {runway.he_ils !== undefined ? `${runway.he_ils.freq}ft / ${runway.he_ils.course}*` : 'n/a'}</p>
                 </div>
               </React.Fragment>
             )

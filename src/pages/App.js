@@ -14,7 +14,7 @@ const App = () => {
 		<div className="App">
 			<div className="container">
         <div className="header">
-          <h1>✈️ Essential Flight Tool by Paweł Nosalski</h1>
+          <h1>Essential Flight Tool by Pawel Nosalski</h1>
         </div>
 
         <div className="tabs">

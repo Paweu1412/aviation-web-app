@@ -9,7 +9,7 @@ const Settings = () => {
       </div> */}
 
       <div className="lower">
-        <span>About me 📧</span>
+        <span>About me</span>
         <p>Discord: pavvciu</p>
         <p>E-mail: fordcrown2009@gmail.com</p>
         <a href="https://www.buymeacoffee.com/essentialflighttool">buymeacoffee.com/essentialflighttool</a>

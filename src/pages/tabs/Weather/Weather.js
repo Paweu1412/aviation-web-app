@@ -156,22 +156,22 @@ const Weather = () => {
 
       {dataCollected !== 2 && 
         <div className="instruction">
-          <span>Before you choose an airport 👇</span>
+          <span>Before you choose an airport:</span>
 
           <div className="explanations">
             <div className="explanation">
               <img src={canLandIcon} alt="can land" />
-              <p>• Runway is available for use</p>
+              <p>- Runway is available for use</p>
             </div>
 
             <div className="explanation">
               <img src={needBeSureLandIcon} alt="need be sure land" />
-              <p>• Runway may be available for use, but you need to make sure</p>
+              <p>- Runway may be available for use, but you need to make sure</p>
             </div>
 
             <div className="explanation">
               <img src={cannotLandIcon} alt="cannot land" />
-              <p>• Runway is not available for use</p>
+              <p>- Runway is not available for use</p>
             </div>
 
             <div className="explanation">
