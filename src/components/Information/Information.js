@@ -244,15 +244,15 @@ const Information = (query) => {
               let callback = '';
 
               if (results.headwind) {
-                callback += `\n• Headwind ${results.headwind}`
+                callback += `\n- Headwind ${results.headwind}`
               }
 
               if (results.tailwind) {
-                callback += `\n• Tailwind ${results.tailwind}`
+                callback += `\n- Tailwind ${results.tailwind}`
               }
 
               if (results.crosswind) {
-                callback += `\n• Crosswind ${results.crosswind}`
+                callback += `\n- Crosswind ${results.crosswind}`
               }
 
               return callback;
