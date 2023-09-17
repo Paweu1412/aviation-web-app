@@ -6,6 +6,12 @@
   <b>• Transition Level Tool</b> - is a calculator that allows you to calculate the Transition Level based on the airport's given QNH and Transition Altitude.
 </p>
 
+<p>
+  Special thanks for the APIs to:<br>
+  • https://www.checkwx.com/<br>
+  • https://airportdb.io/
+</p>
+
 <h2>https://pawelnosalski.pl/eft</h2>
 
 <p align="center">
