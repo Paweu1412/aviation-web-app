@@ -28,7 +28,7 @@ const Weather = () => {
       setLoading(false);
     }
   }, [dataCollected])
-  
+
   useEffect(() => {
     if (alert !== '') {
       const timer = setTimeout(() => {
@@ -46,9 +46,9 @@ const Weather = () => {
         color="primary"
         startDecorator={<Warning />}
         endDecorator={
-          <IconButton 
-            variant="plain" 
-            size="sm" 
+          <IconButton
+            variant="plain"
+            size="sm"
             color="neutral"
             onClick={() => setAlert('')}
           >
@@ -92,7 +92,7 @@ const Weather = () => {
         setAirportData(res);
         setDataCollected(prevDataCollected => prevDataCollected + 1);
       })
-    
+
 
     await fetch(`https://api.checkwx.com/metar/${icaoCode}/decoded?x-api-key=${CHECKWX_API_TOKEN}`)
       .then(res => res.json())
@@ -113,7 +113,7 @@ const Weather = () => {
   return (
     <div className="Weather">
       <div className="upper">
-        <span>Enter the ICAO airport to get airport weather and runways available for use.</span>
+        <span>Enter the ICAO number to get airport weather and runways available for use.</span>
       </div>
 
       <div className="main">
@@ -136,7 +136,7 @@ const Weather = () => {
           }}
         />
 
-        {loading ? 
+        {loading ?
           <Button loading
             style={{ backgroundColor: '#0b6bcb' }}
             color="primary"
@@ -154,7 +154,7 @@ const Weather = () => {
         }
       </div>
 
-      {dataCollected !== 2 && 
+      {dataCollected !== 2 &&
         <div className="instruction">
           <span>Before you choose an airport 👇</span>
 
@@ -180,7 +180,7 @@ const Weather = () => {
           </div>
         </div>
       }
-      
+
 
       <div className="lower">
         {dataCollected === 2 && <Information airportData={airportData} weatherData={weatherData} />}
@@ -189,7 +189,7 @@ const Weather = () => {
       <div className="alert">
         {alert !== '' && alert}
       </div>
-    </div> 
+    </div>
   )
 }
 

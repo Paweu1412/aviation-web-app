@@ -11,12 +11,12 @@ const Settings = () => {
       <div className="lower">
         <span>About me 📧</span>
         <p>Discord: pavvciu</p>
-        <p>E-mail: fordcrown2009@gmail.com</p>
+        <p>E-mail: pa.nosalski@gmail.com</p>
         <a href="https://www.buymeacoffee.com/essentialflighttool">buymeacoffee.com/essentialflighttool</a>
       </div>
 
       <div className="version">
-        <span>12.09.2023 20:31 v1.02</span>
+        <span>21/10/2024 18:10 v1.03</span>
       </div>
     </div>
   )
